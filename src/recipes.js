@@ -1,3 +1,4 @@
+import { moreRecipes } from './more-recipes.js';
 import { expandedRecipes } from './expanded-recipes.js';
 // Calories are approximate per ingredient quantity, not medical nutrition advice.
 const ingredient = (name, quantity, unit, calories) => ({ name, quantity, unit, calories });
@@ -32,4 +33,4 @@ export const recipes = [...originalRecipes.map(recipe => ({
   healthReason: occasional.has(recipe.id)
     ? 'يحتوي جبنًا وخبزًا مكررًا ودهونًا مشبعة؛ يفضل تناوله أحيانًا وبحصة معتدلة.'
     : 'تحضير منزلي بكمية دهون معتدلة مع خضار أو بقول أو بروتين؛ الحصة والتوازن الغذائي مهمان.'
-})), ...expandedRecipes];
+})), ...expandedRecipes, ...moreRecipes];
